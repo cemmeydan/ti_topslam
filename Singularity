@@ -10,18 +10,26 @@ From: dynverse/dynwrap:py2.7
 %labels
     version 0.1.10
 
-%setup
-    mkdir /scratchLocal
-    mkdir /pbtech_mounts
-    mkdir /pbtech_mounts/softlib001
-    mkdir /athena
-    mkdir /zenodotus
+
+    
+    
+    
+    
+    
 
 %files
 
     . /code
 
 %post
+    mkdir /scratchLocal
+    mkdir /pbtech_mounts
+    mkdir /pbtech_mounts/softlib001
+    mkdir /athena
+    mkdir /zenodotus
+
+
+
     chmod -R 755 '/code'
     pip install GPy
     cd / && git clone https://github.com/mzwiessele/topslam.git
